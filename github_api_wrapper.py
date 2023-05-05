@@ -12,7 +12,7 @@ class GitHubAPIWrapper:
         response = requests.get(url, headers=headers)
 
         if response.status_code != 200:
-            raise Exception(f"GitHub API request failed: {response.text}")
+            raise Exception(f"GitHub API request failed: {response.status_code} {response.text}")
 
         return response.json()
 
