@@ -1,8 +1,8 @@
 # app.py
 
 import os
-import APIKEYGITHUB
-import APIKEYOPENAI
+from config import APIKEYGITHUB
+from config import APIKEYOPENAI
 
 
 import streamlit as st
