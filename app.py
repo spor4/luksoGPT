@@ -1,8 +1,8 @@
 # app.py
 
 import os
-from config import openai_api_key
-from config import github_api_key
+import APIKEYGITHUB
+import APIKEYOPENAI
 
 
 import streamlit as st
@@ -13,13 +13,13 @@ from langchain.memory import ConversationBufferMemory
 from github_api_wrapper import GitHubAPIWrapper
 
 # Set the OpenAI API key from your apikey file
-os.environ['OPENAI_API_KEY'] = openai_api_key
+os.environ['OPENAI_API_KEY'] = APIKEYOPENAI
 
 # App framework
 st.title('Why is LUKSO awesome? 🆙')
 
 # Initialize GitHub API
-github_api = GitHubAPIWrapper(api_token=github_api_key)
+github_api = GitHubAPIWrapper(api_token=APIKEYGITHUB)
 
 # Get repository and subdirectory information
 repo_infos = [
