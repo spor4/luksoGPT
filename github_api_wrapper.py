@@ -18,8 +18,7 @@ class GitHubAPIWrapper:
                 f"Headers: {headers}"
             )
 
-    return response.json()
-
+        return response.json()
 
     def get_repo_info(self, owner: str, repo: str, subdir: str = None) -> dict:
         if subdir:
