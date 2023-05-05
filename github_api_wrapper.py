@@ -12,9 +12,14 @@ class GitHubAPIWrapper:
         response = requests.get(url, headers=headers)
 
         if response.status_code != 200:
-            raise Exception(f"GitHub API request failed: {response.status_code} {response.text}")
+            raise Exception(
+                f"GitHub API request failed: {response.status_code} {response.text}\n"
+                f"URL: {url}\n"
+                f"Headers: {headers}"
+            )
 
-        return response.json()
+    return response.json()
+
 
     def get_repo_info(self, owner: str, repo: str, subdir: str = None) -> dict:
         if subdir:
