@@ -13,13 +13,13 @@ from langchain.memory import ConversationBufferMemory
 from github_api_wrapper import GitHubAPIWrapper
 
 # Set the OpenAI API key from your apikey file
-os.environ['OPENAI_API_KEY'] = APIKEYOPENAI
+os.environ['OPENAI_API_KEY'] = st.secret["APIKEYOPENAI"]
 
 # App framework
 st.title('Why is LUKSO awesome? 🆙')
 
 # Initialize GitHub API
-github_api = GitHubAPIWrapper(api_token=APIKEYGITHUB)
+github_api = GitHubAPIWrapper(api_token = st.secret["APIKEYGITHUB"])
 
 # Get repository and subdirectory information
 repo_infos = [
