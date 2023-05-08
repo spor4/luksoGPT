@@ -62,7 +62,7 @@ question_memory = ConversationBufferMemory(input_key="question", memory_key="cha
 llm = OpenAI(temperature=0.9)
 question_chain = LLMChain(llm=llm, prompt=question_template, verbose=True, output_key="answer", memory=question_memory)
 
-question = st.text_input("Ask a question about the selected lukso-network repositories")
+question = st.text_input("Ask a question about LUKSOs LSPs.")
 
 # Show the answer if there's a question
 if question:
